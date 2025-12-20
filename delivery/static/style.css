@@ -1,0 +1,57 @@
+body {
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe0d1 100%);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #4a2c2a;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.15);
+    text-align: center;
+    width: 320px;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #ff6b35; /* Tasty Orange */
+}
+
+.btn {
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Primary Sign Up Button */
+.signup-btn {
+    background-color: #ff6b35;
+    color: white;
+}
+
+.signup-btn:hover {
+    background-color: #e85a28;
+    transform: translateY(-2px);
+}
+
+/* Outline Sign In Button */
+.signin-btn {
+    background-color: transparent;
+    color: #ff6b35;
+    border: 2px solid #ff6b35;
+}
+
+.signin-btn:hover {
+    background-color: #fff5f0;
+}
