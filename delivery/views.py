@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.db import IntegrityError
-from .models import User
+from .models import Restaurant, User
 
 # Create your views here.
 def index(request):
@@ -39,21 +39,42 @@ def signin(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        try:
-            user = User.objects.get(username=username, password=password)
-            request.session['username'] = user.username
-            
-            if user.username == 'admin':
-                return render(request, 'admin_home.html')
-            else:
-                return render(request, 'customer_home.html')
+    try:
+        User.objects.get(username = username, password = password)
+        if username == 'admin':
+            return render(request, 'admin_home.html')
+        else:
+            restaurantList = Restaurant.objects.all()
+            return render(request, 'customer_home.html',{"restaurantList" : restaurantList, "username" : username})
 
-        except User.DoesNotExist:
-            return render(request, 'fail.html')
-
-    return render(request, 'signin.html')
+    except User.DoesNotExist:
+        return render(request, 'fail.html')
 
     
 def open_add_restaurant(request):
     return render(request, 'add_restaurant.html')
         
+def add_restaurant(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        picture = request.POST.get('picture')
+        cuisine = request.POST.get('cuisine')
+        rating = request.POST.get('rating')
+        
+        try:
+            Restaurant.objects.get(name = name)
+            return HttpResponse("Duplicate restaurant!")
+            
+        except:
+            Restaurant.objects.create(
+                name = name,
+                picture = picture,
+                cuisine = cuisine,
+                rating = rating,
+            )
+        return HttpResponse("Successfully Added !")
+        return render(request, 'admin_home.html')
+    
+def open_show_restaurant(request):
+    restaurantList = Restaurant.objects.all()
+    return render(request, 'show_restaurants.html',{"restaurantList" : restaurantList})
