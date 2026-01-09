@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In Failed | MealHub</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
 <body>
-    <h1>Sign-In Failed</h1>
-    <p>Invalid username or password. Please try again.</p>
+
+    <div class="error-container">
+        <div class="error-card">
+            <h1>❌ Sign In Failed</h1>
+            <p>Invalid username or password.</p>
+            <p class="sub-text">Please check your credentials and try again.</p>
+
+            <a href="{% url 'open_signin' %}" class="btn-retry">Back to Sign In</a>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -3,43 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu | MealHub</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
 <body>
-    <h3>Welcome {{username}}!</h3>
 
-    <a href="" >Go to cart</a>
+    <div class="menu-container">
 
-    <!-- show current menu -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Item name</th>
-                <th>Picture</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Is veg?</th>
-                <th>Operation</th>
-            </tr>
-        </thead>
-        <tbody>
-            {%  for item in itemList %}
-                <tr>
-                    <td>{{ item.name }}</td>
-                    <td>
-                        <img src="{{ item.picture }}">
-                    </td>
-                    <td>{{ item.description }}</td>
-                    <td>{{ item.price }}</td>
-                    <td>{{ item.vegeterian }}</td>
-                    <td>
-                        <a href="">
-                            Add to cart
-                        </a>
-                    </td>
-                </tr>
+        <div class="menu-header">
+            <h2>Welcome, {{ username }} 👋</h2>
+            <a href="{% url 'show_cart' username %}" class="cart-link">🛒 Go to Cart</a>
+        </div>
+
+        <div class="menu-grid">
+            {% for item in itemList %}
+                <div class="menu-item-card">
+
+                    <img src="{{ item.picture }}" alt="{{ item.name }}" class="menu-img">
+
+                    <div class="menu-details">
+                        <div class="menu-title">
+                            <h4>{{ item.name }}</h4>
+                            <span class="price">₹{{ item.price }}</span>
+                        </div>
+
+                        <p class="description">{{ item.description }}</p>
+
+                        <div class="menu-footer">
+                            <span class="veg-status">
+                                {% if item.vegeterian %}
+                                    🟢 Veg
+                                {% else %}
+                                    🔴 Non-Veg
+                                {% endif %}
+                            </span>
+
+                            <a href="{% url 'add_to_cart' item.id username %}" class="btn-add">Add to Cart</a>
+                        </div>
+                    </div>
+
+                </div>
+            {% empty %}
+                <p class="no-data">No menu items available.</p>
             {% endfor %}
-        </tbody>
-    </table>
+        </div>
+
+    </div>
+
 </body>
 </html>

@@ -1,57 +1,1047 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page background */
 body {
-    background: linear-gradient(135deg, #fff5f0 0%, #ffe0d1 100%);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff7a18, #ffb347);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: #4a2c2a;
 }
 
-.container {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.15);
+/* Form container */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.form-container h2 {
     text-align: center;
-    width: 320px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-h3 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #ff6b35; /* Tasty Orange */
-}
-
-.btn {
+/* Labels */
+form label {
     display: block;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 14px;
-    margin: 12px 0;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
 }
 
-/* Primary Sign Up Button */
+/* Inputs */
+form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Input focus */
+form input:focus {
+    outline: none;
+    border-color: #ff7a18;
+}
+
+/* Button */
+form button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background-color: #ff7a18;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Button hover */
+form button:hover {
+    background-color: #e86a0f;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page background */
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #1d2671, #c33764);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.dashboard-container {
+    width: 900px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+.admin-header p {
+    margin-top: 8px;
+    color: #666;
+}
+
+/* Grid layout */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.admin-card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon */
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* Card text */
+.admin-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.admin-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.admin-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Button colors */
+.btn-add {
+    background-color: #28a745;
+}
+
+.btn-view {
+    background-color: #007bff;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+.btn-view:hover {
+    background-color: #0069d9;
+}
+
+/* Footer */
+.admin-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.logout-link {
+    color: #c33764;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page background */
+body {
+    background: #f4f6f9;
+    padding: 30px;
+}
+
+/* Main container */
+.customer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Welcome text */
+.welcome-text {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Grid layout */
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.restaurant-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.restaurant-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Content */
+.restaurant-details {
+    padding: 15px;
+}
+
+.restaurant-details h3 {
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.restaurant-details p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+/* Button */
+.view-menu-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background-color: #ff6f00;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-menu-btn:hover {
+    background-color: #e65c00;
+}
+
+/* No data */
+.no-data {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page background */
+body {
+    background-color: #f5f7fa;
+    padding: 30px;
+}
+
+/* Main container */
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.menu-header h2 {
+    color: #333;
+}
+
+.cart-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff6f00;
+}
+
+.cart-link:hover {
+    text-decoration: underline;
+}
+
+/* Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.menu-item-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.menu-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Details */
+.menu-details {
+    padding: 15px;
+}
+
+.menu-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-title h4 {
+    color: #222;
+}
+
+.price {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Description */
+.description {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Footer */
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.veg-status {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Button */
+.btn-add {
+    padding: 6px 14px;
+    background-color: #ff6f00;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-add:hover {
+    background-color: #e65c00;
+}
+
+/* No data */
+.no-data {
+    color: #777;
+    font-size: 16px;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page background */
+body {
+    background: linear-gradient(135deg, #ff6f00, #ff9f43);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.error-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Card */
+.error-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.error-card h1 {
+    color: #d32f2f;
+    margin-bottom: 15px;
+}
+
+/* Text */
+.error-card p {
+    color: #444;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.sub-text {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Button */
+.btn-retry {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #ff6f00;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-retry:hover {
+    background-color: #e65c00;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6f00, #ff9f43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Content */
+.hero-content h1 {
+    font-size: 64px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-content h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/* Buttons container */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Button base */
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.25s ease;
+}
+
+/* Sign up */
 .signup-btn {
-    background-color: #ff6b35;
-    color: white;
+    background-color: #ffffff;
+    color: #ff6f00;
 }
 
 .signup-btn:hover {
-    background-color: #e85a28;
-    transform: translateY(-2px);
+    background-color: #ffe0c2;
 }
 
-/* Outline Sign In Button */
+/* Sign in */
 .signin-btn {
     background-color: transparent;
-    color: #ff6b35;
-    border: 2px solid #ff6b35;
+    border: 2px solid #ffffff;
+    color: #ffffff;
 }
 
 .signin-btn:hover {
-    background-color: #fff5f0;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Page Container */
+.container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+.page-header {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Grid Layout */
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Card */
+.restaurant-card {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Image */
+.img-container {
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Rating */
+.rating-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #ff6f00;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Card Info */
+.card-info {
+    padding: 18px;
+}
+
+.card-info h4 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.cuisine-text {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Admin Actions */
+.admin-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Buttons */
+.btn-small {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.25s ease;
+}
+
+/* Button Colors */
+.btn-small.update {
+    background: #2196f3;
+    color: white;
+}
+
+.btn-small.menu {
+    background: #4caf50;
+    color: white;
+}
+
+.btn-small.delete {
+    background: #f44336;
+    color: white;
+}
+
+.btn-small:hover {
+    opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Auth Page Background */
+.auth-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff6f00, #ff8f00);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Auth Card */
+.auth-container {
+    background: white;
+    padding: 40px;
+    width: 360px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+/* Titles */
+.auth-title {
+    font-size: 26px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.auth-subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Form */
+.auth-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6f00;
+}
+
+/* Button */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ff6f00;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: #e65c00;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .auth-container {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+/* Textarea styling */
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: none;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6f00;
+}
+
+/* Success Page */
+.success-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff6f00, #ff9f43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Card */
+.success-card {
+    background: white;
+    padding: 50px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    max-width: 400px;
+    width: 90%;
+}
+
+.success-card h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.success-card p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.success-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #ff6f00;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.success-btn:hover {
+    background: #e65c00;
+}
+
+.success-btn.logout {
+    background: #555;
+}
+
+.success-btn.logout:hover {
+    background: #333;
+}
+
+/* Page Container */
+.container {
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.page-header {
+    margin: 30px 0 20px;
+    color: #333;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Menu Card */
+.menu-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 15px;
+}
+
+.menu-info h4 {
+    margin-bottom: 6px;
+}
+
+.menu-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: bold;
+    color: #ff6f00;
+}
+
+.veg {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.veg.veg {
+    color: green;
+}
+
+.veg.nonveg {
+    color: red;
+}
+
+/* Form */
+.menu-form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    max-width: 450px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #ff6f00;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #e65c00;
+}
+
+/* Admin Page Background */
+.admin-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9f43, #ff6f00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Admin Form Card */
+.admin-form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 420px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Title */
+.admin-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Form */
+.admin-form .form-group {
+    margin-bottom: 18px;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #444;
+}
+
+.admin-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.admin-form input:focus {
+    outline: none;
+    border-color: #ff6f00;
+}
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #ff6f00;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #e65c00;
 }

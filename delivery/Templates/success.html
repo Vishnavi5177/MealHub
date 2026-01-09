@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome | MealHub</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
-<body>
-    <h1>Welcome {{ request.session.username }}!</h1>
-    <p>You have successfully signed in.</p>
-    
+<body class="success-body">
+
+    <div class="success-card">
+        <h1>Welcome, {{ request.session.username }} 👋</h1>
+        <p>You have successfully signed in.</p>
+
+        <div class="success-actions">
+            <a href="{% url 'customer_home' %}" class="success-btn">Go to Home</a>
+            <a href="{% url 'open_signin' %}" class="success-btn logout">Logout</a>
+        </div>
+    </div>
+
+</body>
 </html>

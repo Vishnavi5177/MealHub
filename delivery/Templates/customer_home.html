@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Page</title>
+    <title>Customer Home | MealHub</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
 <body>
-    <h3>Welcome {{username}}!</h3>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Restaurant name</th>
-                <th>Picture</th>
-                <th>Cuisine</th>
-                <th>Rating</th>
-                <th>Operations</th>
-            </tr>
-        </thead>
-        <tbody>
-            {%  for r in restaurantList %}
-                <tr>
-                    <td>{{ r.name }}</td>
-                    <td>
-                        <img src="{{ r.picture }}">
-                    </td>
-                    <td>{{ r.cuisine }}</td>
-                    <td>{{ r.rating }}</td>
-                    <td>
-                        <a href="{% url 'view_menu' r.id username %}">
+    <div class="customer-container">
+
+        <h2 class="welcome-text">Welcome, {{ username }} 👋</h2>
+
+        <div class="restaurant-grid">
+            {% for r in restaurantList %}
+                <div class="restaurant-card">
+
+                    <div class="restaurant-image">
+                        <img src="{{ r.picture }}" alt="{{ r.name }}">
+                    </div>
+
+                    <div class="restaurant-details">
+                        <h3>{{ r.name }}</h3>
+                        <p><strong>Cuisine:</strong> {{ r.cuisine }}</p>
+                        <p><strong>Rating:</strong> ⭐ {{ r.rating }}</p>
+
+                        <a href="{% url 'view_menu' r.id username %}" class="view-menu-btn">
                             View Menu
                         </a>
-                    </td>
-                </tr>
+                    </div>
+
+                </div>
+            {% empty %}
+                <p class="no-data">No restaurants available.</p>
             {% endfor %}
-        </tbody>
-    </table>
+        </div>
+
+    </div>
+
 </body>
 </html>

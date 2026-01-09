@@ -3,13 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <title>Admin Dashboard | MealHub</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
 <body>
-    <h3>Welcome to Admin HOME!</h3>
 
-    <a href="open_add_restaurant">ADD NEW RESTAURANT</a>
-    <br><br>
-    <a href="open_show_restaurant">SHOW RESTAURANTS</a>
+    <div class="dashboard-container">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <p>Manage your restaurants and menus</p>
+        </header>
+
+        <div class="admin-grid">
+
+            <div class="admin-card">
+                <div class="card-icon">➕</div>
+                <h3>Add Restaurant</h3>
+                <p>Register a new restaurant into MealHub.</p>
+                <a href="{% url 'open_add_restaurant' %}" class="admin-btn btn-add">
+                    Add New
+                </a>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-icon">🏪</div>
+                <h3>Manage Restaurants</h3>
+                <p>View, update, or delete restaurants.</p>
+                <a href="{% url 'open_show_restaurant' %}" class="admin-btn btn-view">
+                    View All
+                </a>
+            </div>
+
+        </div>
+
+        <footer class="admin-footer">
+            <a href="{% url 'open_signin' %}" class="logout-link">Logout</a>
+        </footer>
+    </div>
+
 </body>
 </html>

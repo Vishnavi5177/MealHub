@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>MealHub | Delicious Delivered</title>
+
     {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
 <body>
-    <div class="container">
-    <h3>Welcome to MealHub!</h3>
-    <br>
-    <a href="open_signup" class="btn signup-btn">SIGN UP</a>
-    <br>
-    <a href="open_signin" class="btn signin-btn">SIGN IN</a>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>MealHub</h1>
+            <h3>Delicious food delivered to your door</h3>
+
+            <div class="hero-buttons">
+                <a href="{% url 'open_signup' %}" class="btn signup-btn">Sign Up</a>
+                <a href="{% url 'open_signin' %}" class="btn signin-btn">Sign In</a>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
