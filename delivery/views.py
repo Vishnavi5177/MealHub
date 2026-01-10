@@ -159,11 +159,8 @@ def view_menu(request, restaurant_id, username):
 def add_to_cart(request, item_id, username):
     item = Item.objects.get(id = item_id)
     customer = User.objects.get(username = username)
-
     cart, created = Cart.objects.get_or_create(customer = customer)
-
     cart.items.add(item)
-
     return HttpResponse('added to cart')
 
 def show_cart(request, username):

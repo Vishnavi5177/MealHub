@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cart | MealHub</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    Hello {{username}}
-    <!-- show current menu -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Item Image</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {%  for item in itemList %}
-                <tr>
-                    <td>
-                        <img src="{{ item.picture }}">
-                    </td>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.description }}</td>
-                    <td>{{ item.price }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        <h2>Total price : {{total_price}}</h2>
+
+<div class="page-wrapper">
+    <h2 class="welcome-text">Hello {{ username }} 👋</h2>
+
+    <div class="cart-container">
+        {% for item in itemList %}
+        <div class="cart-card">
+            <img src="{{ item.picture }}" alt="{{ item.name }}" class="cart-img">
+
+            <div class="cart-details">
+                <h4>{{ item.name }}</h4>
+                <p class="cart-desc">{{ item.description }}</p>
+            </div>
+
+            <div class="cart-price">
+                ₹{{ item.price }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="cart-summary">
+        <h3>Total Price: ₹{{ total_price }}</h3>
+
         <form action="{% url 'checkout' username %}">
-            <input type="submit" value="CHECK OUT" />
+            <button type="submit" class="checkout-btn">CHECK OUT</button>
         </form>
-    </table>
+    </div>
+</div>
+
 </body>
 </html>

@@ -3,66 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Checkout | MealHub</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
-    <h1>Checkout</h1>
-    <h2>Welcome, {{ username }}</h2>
+
+<div class="checkout-page">
+
+    <h1 class="checkout-title">Checkout</h1>
+    <p class="checkout-user">Welcome, <strong>{{ username }}</strong></p>
 
     {% if error %}
-    <p style="color: red;">{{ error }}</p>
+        <p class="error-msg">{{ error }}</p>
     {% else %}
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in cart_items %}
-            <tr>
-                <td>{{ item.name }}</td>
-                <td>₹{{ item.price }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h3>Total: ₹{{ total_price }}</h3>
 
-    <button id="rzp-button">Pay with Razorpay</button>
+    <div class="checkout-card">
+        <div class="checkout-items">
+            {% for item in cart_items %}
+            <div class="checkout-item">
+                <span class="item-name">{{ item.name }}</span>
+                <span class="item-price">₹{{ item.price }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="checkout-total">
+            <span>Total Amount</span>
+            <span class="total-price">₹{{ total_price }}</span>
+        </div>
+
+        <button id="rzp-button" class="pay-btn">
+            Pay with Razorpay
+        </button>
+    </div>
+
     {% endif %}
 
-    <script>
-        var options = {
-            "key": "{{ razorpay_key_id }}",  // Razorpay API key
-            "amount": "{{ total_price|floatformat:2|add:'0.00'|floatformat:2 }}00", // Amount in paisa
-            "currency": "INR",
-            "name": "MealHub",
-            "description": "Order Payment",
-            "order_id": "{{ order_id }}",  // Razorpay order ID
-            "handler": function (response) {
-                alert("Payment Successful!");
-                // Redirect to the orders page
-                window.location.href = "{% url 'orders' username %}";
-            },
-            "prefill": {
-                "name": "{{ username }}",
-                "email": "customer@example.com",
-                "contact": "9999999999"
-            },
-            "theme": {
-                "color": "#528FF0"
-            }
-        };
-        var rzp = new Razorpay(options);
-    
-        document.getElementById('rzp-button').onclick = function(e) {
-            rzp.open();
-            e.preventDefault();
+</div>
+
+<script>
+    var options = {
+        "key": "{{ razorpay_key_id }}",
+        "amount": "{{ total_price|floatformat:2|add:'0.00'|floatformat:2 }}00",
+        "currency": "INR",
+        "name": "MealHub",
+        "description": "Order Payment",
+        "order_id": "{{ order_id }}",
+        "handler": function (response) {
+            alert("Payment Successful!");
+            window.location.href = "{% url 'orders' username %}";
+        },
+        "prefill": {
+            "name": "{{ username }}",
+            "email": "customer@example.com",
+            "contact": "9999999999"
+        },
+        "theme": {
+            "color": "#ff5722"
         }
-    </script> 
-    
+    };
+
+    var rzp = new Razorpay(options);
+
+    document.getElementById('rzp-button').onclick = function(e) {
+        rzp.open();
+        e.preventDefault();
+    }
+</script>
+
 </body>
 </html>

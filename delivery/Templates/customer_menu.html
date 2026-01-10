@@ -8,6 +8,8 @@
     {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
 
+
+
 </head>
 <body>
 
@@ -16,6 +18,7 @@
         <div class="menu-header">
             <h2>Welcome, {{ username }} 👋</h2>
             <a href="{% url 'show_cart' username %}" class="cart-link">🛒 Go to Cart</a>
+
         </div>
 
         <div class="menu-grid">
@@ -53,5 +56,6 @@
 
     </div>
 
+    
 </body>
 </html>

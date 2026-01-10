@@ -3,21 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>Order Summary</title>
+    <title>Order Summary | MealHub</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Thank you for your order, {{ username }}!</h1>
 
+<div class="order-summary-page">
 
-    <h2>Delivery Address</h2>
-    <p>{{ customer.address }}</p>
+    <div class="order-card">
+        <div class="success-icon">✅</div>
 
-    <p>Your order will be delivered to this location shortly. Thank you for choosing Meal Mate!</p>
+        <h1 class="order-title">
+            Thank you for your order, {{ username }}!
+        </h1>
 
-    {% if cart_items %}
-        <a href="{% url 'customer_menu' cart_items.0.restaurant.id username %}">Back to Restaurants</a>
-    {% else %}
-        <a href="/">Back to Home</a>
-    {% endif %}
+        <p class="order-subtext">
+            Your payment was successful and your order is confirmed.
+        </p>
+
+        <div class="address-box">
+            <h2>📍 Delivery Address</h2>
+            <p>{{ customer.address }}</p>
+        </div>
+
+        <p class="delivery-text">
+            Your order will be delivered to this location shortly.  
+            Thank you for choosing <strong>MealHub</strong> 🍽️
+        </p>
+
+        <div class="order-actions">
+            {% if cart_items %}
+                <a href="{% url 'customer_menu' cart_items.0.restaurant.id username %}" class="btn-primary">
+                    Back to Restaurants
+                </a>
+            {% else %}
+                <a href="/" class="btn-secondary">
+                    Back to Home
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
